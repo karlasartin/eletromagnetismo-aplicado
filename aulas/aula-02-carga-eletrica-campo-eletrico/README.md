@@ -1,182 +1,300 @@
-# Aula 02 — Carga Elétrica e Campo Elétrico
+# Aula 02 — Carga Elétrica e Lei de Coulomb
 
 ## Eletromagnetismo Aplicado
 
-Nesta aula estudaremos os fundamentos da **carga elétrica** e do
-**campo elétrico**, estabelecendo a relação entre carga, força elétrica
-e a modificação do espaço ao redor de uma carga fonte.
+Nesta aula estudamos os fundamentos da **carga elétrica** e das **interações eletrostáticas**, chegando à formulação e aplicação da **Lei de Coulomb**.
+
+Além da abordagem física e matemática, utilizamos **Python no Google Colab** para desenvolver calculadoras aplicadas à Lei de Coulomb.
 
 ---
 
-## Objetivos da Aula
+## Objetivos da aula
 
-Ao final desta aula, o estudante deverá ser capaz de:
+Ao final da aula, o estudante deverá ser capaz de:
 
 - compreender o conceito de carga elétrica;
 - identificar cargas positivas e negativas;
-- compreender conservação e quantização da carga;
+- compreender as propriedades fundamentais da carga elétrica;
 - analisar atração e repulsão entre cargas;
 - aplicar a Lei de Coulomb;
-- compreender o conceito de campo elétrico;
-- diferenciar força elétrica de campo elétrico;
-- determinar o campo produzido por uma carga puntiforme;
-- identificar direção e sentido do campo elétrico;
-- interpretar linhas de campo elétrico;
-- aplicar o princípio da superposição;
-- calcular o campo elétrico resultante;
-- relacionar os conceitos estudados com aplicações em Engenharia.
+- interpretar a influência da distância sobre a força elétrica;
+- relacionar força elétrica com as Leis de Newton;
+- realizar conversões de unidades;
+- relacionar corrente elétrica e quantidade de carga;
+- desenvolver cálculos da Lei de Coulomb utilizando Python.
 
 ---
 
-## 1. Carga Elétrica
+# 1. Carga elétrica
 
-A carga elétrica é uma propriedade física fundamental da matéria.
+A **carga elétrica** é uma propriedade fundamental da matéria responsável pelas interações elétricas.
 
-As cargas podem ser:
+Existem dois tipos de carga:
 
-- positivas;
-- negativas.
+- positiva (+);
+- negativa (-).
 
-A unidade de carga elétrica no Sistema Internacional é o coulomb (C).
+A unidade de carga elétrica no Sistema Internacional é o:
 
-### Carga elementar
+**Coulomb (C)**
+
+A carga elementar possui módulo:
 
 e = 1,602 × 10⁻¹⁹ C
 
-### Quantização da carga
+---
 
-q = n · e
+# 2. Quantização da carga
+
+A carga elétrica é quantizada.
+
+Isso significa que a quantidade de carga de um corpo ocorre em múltiplos inteiros da carga elementar:
+
+Q = n · e
+
+Onde:
+
+- Q = carga elétrica total;
+- n = número inteiro;
+- e = carga elementar.
 
 ---
 
-## 2. Interação entre Cargas
+# 3. Propriedades da carga elétrica
 
-Cargas de mesmo sinal se repelem.
+Entre as principais propriedades estudadas estão:
 
-Cargas de sinais diferentes se atraem.
+### Interação
+
+Cargas elétricas exercem forças umas sobre as outras.
+
+### Conservação
+
+Em um sistema isolado, a carga elétrica total permanece constante.
+
+### Quantização
+
+A carga elétrica ocorre em múltiplos inteiros da carga elementar.
+
+### Aditividade
+
+A carga total de um sistema corresponde à soma algébrica das cargas individuais:
+
+Qtotal = q₁ + q₂ + ... + qₙ
+
+### Invariância
+
+A carga elétrica de uma partícula não depende do referencial inercial utilizado.
+
+### Transferência
+
+Cargas elétricas podem ser transferidas entre corpos por diferentes processos, como:
+
+- atrito;
+- contato;
+- indução.
 
 ---
 
-## 3. Lei de Coulomb
+# 4. Interação entre cargas elétricas
 
-A força elétrica entre duas cargas puntiformes é determinada por:
+A regra fundamental é:
+
+### Cargas de mesmo sinal
+
+**Se repelem.**
+
+(+)(+) → repulsão
+
+(-)(-) → repulsão
+
+### Cargas de sinais opostos
+
+**Se atraem.**
+
+(+)(-) → atração
+
+Portanto:
+
+> Mesmo sinal → REPULSÃO  
+> Sinais opostos → ATRAÇÃO
+
+---
+
+# 5. Lei de Coulomb
+
+A Lei de Coulomb determina o módulo da força eletrostática entre duas cargas puntiformes.
 
 F = k · |q₁q₂| / r²
 
-onde:
+Onde:
 
-- F = força elétrica (N);
-- q₁ e q₂ = cargas elétricas (C);
+- F = módulo da força elétrica (N);
+- q₁ = primeira carga elétrica (C);
+- q₂ = segunda carga elétrica (C);
 - r = distância entre as cargas (m);
-- k ≈ 8,99 × 10⁹ N·m²/C².
+- k = constante eletrostática.
+
+No vácuo:
+
+k ≈ 8,99 × 10⁹ N·m²/C²
 
 ---
 
-## 4. Do conceito de força para o conceito de campo
+# 6. O que a Lei de Coulomb nos mostra?
 
-Uma carga elétrica modifica o espaço ao seu redor.
+A força elétrica é diretamente proporcional ao produto dos módulos das cargas:
 
-CARGA FONTE
-      ↓
-modifica o espaço
-      ↓
-CAMPO ELÉTRICO
-      ↓
-colocamos uma carga de prova
-      ↓
-FORÇA ELÉTRICA
+F ∝ |q₁q₂|
 
-A carga de prova permite investigar o campo, mas não é responsável
-pela existência dele.
+e inversamente proporcional ao quadrado da distância:
 
----
+F ∝ 1/r²
 
-## 5. Campo Elétrico
+Portanto:
 
-O campo elétrico é definido pela relação:
-
-E = F / q₀
-
-onde:
-
-- E = campo elétrico;
-- F = força elétrica;
-- q₀ = carga de prova.
-
-Unidade:
-
-N/C
+- aumentar as cargas aumenta a força;
+- aumentar a distância diminui a força;
+- a distância aparece elevada ao quadrado.
 
 ---
 
-## 6. Campo produzido por uma carga puntiforme
+# 7. Influência da distância
 
-Combinando a definição de campo elétrico com a Lei de Coulomb:
+Como:
 
-E = k · |Q| / r²
+F ∝ 1/r²
 
-O campo depende:
+se dobrarmos a distância:
 
-- da carga fonte Q;
-- da distância r até o ponto analisado.
+r → 2r
 
----
+teremos:
 
-## 7. Direção e Sentido
+F' = F/4
 
-### Carga positiva
+Se triplicarmos a distância:
 
-O campo elétrico aponta para fora da carga.
+r → 3r
 
-### Carga negativa
+teremos:
 
-O campo elétrico aponta em direção à carga.
+F' = F/9
 
----
-
-## 8. Linhas de Campo Elétrico
-
-As linhas de campo:
-
-- saem das cargas positivas;
-- chegam às cargas negativas;
-- indicam a direção e o sentido do campo;
-- apresentam maior densidade onde o campo é mais intenso;
-- nunca se cruzam.
+Assim, a força elétrica diminui rapidamente com o aumento da distância.
 
 ---
 
-## 9. Princípio da Superposição
+# 8. Direção e sentido da força elétrica
 
-Quando várias cargas produzem campo em um mesmo ponto:
+A força elétrica atua ao longo da linha que une as duas cargas.
 
-E⃗R = E⃗1 + E⃗2 + ... + E⃗n
+### Mesmo sinal
 
-Por componentes:
+As forças apontam para sentidos que afastam as cargas:
 
-Ex = Σ Ei cos(θi)
+**REPULSÃO**
 
-Ey = Σ Ei sin(θi)
+### Sinais opostos
 
-ER = √(Ex² + Ey²)
+As forças apontam para sentidos que aproximam as cargas:
+
+**ATRAÇÃO**
 
 ---
 
-## 10. Hands On — Python
+# 9. Lei de Coulomb e 3ª Lei de Newton
 
-### Calculadora de Campo Elétrico
+As duas cargas exercem forças uma sobre a outra.
+
+Pela 3ª Lei de Newton:
+
+F₁₂ = -F₂₁
+
+Portanto:
+
+|F₁₂| = |F₂₁|
+
+As forças possuem:
+
+- mesmo módulo;
+- mesma direção;
+- sentidos opostos.
+
+> Uma carga não exerce uma força "maior" sobre a outra apenas por possuir maior carga ou maior massa.
+
+---
+
+# 10. Conversão de unidades
+
+Antes de utilizar a Lei de Coulomb, todas as grandezas devem estar compatíveis com o Sistema Internacional.
+
+### Distância
+
+1 mm = 10⁻³ m
+
+1 cm = 10⁻² m
+
+1 km = 10³ m
+
+### Carga
+
+1 μC = 10⁻⁶ C
+
+1 nC = 10⁻⁹ C
+
+1 pC = 10⁻¹² C
+
+> Atenção: utilizar centímetros, milímetros ou microcoulombs diretamente na fórmula sem conversão produz resultados incorretos.
+
+---
+
+# 11. Ambiente de desenvolvimento — Google Colab
+
+Nesta aula utilizamos o **Google Colab** para executar programas em Python diretamente no navegador.
+
+O Colab permite:
+
+- executar código Python;
+- desenvolver cálculos científicos;
+- salvar notebooks;
+- integrar arquivos ao Google Drive;
+- testar diferentes situações físicas.
+
+---
+
+# 12. Hands On — Calculadora da Lei de Coulomb
+
+Foi desenvolvida uma calculadora em Python para determinar a força eletrostática entre duas cargas puntiformes.
+
+### Entradas
+
+- carga q₁;
+- carga q₂;
+- distância r.
+
+### Processamento
+
+F = k · |q₁q₂| / r²
+
+### Saída
+
+- força eletrostática em Newtons.
+
+---
+
+## Exemplo em Python
 
 ```python
+# Calculadora da Lei de Coulomb
+
 k = 8.99e9
 
-Q = float(input("Digite a carga Q em C: "))
-r = float(input("Digite a distância em metros: "))
+q1 = float(input("Digite a carga q1 em Coulomb: "))
+q2 = float(input("Digite a carga q2 em Coulomb: "))
+r = float(input("Digite a distância entre as cargas em metros: "))
 
-E = k * abs(Q) / r**2
+F = k * abs(q1 * q2) / (r ** 2)
 
-print("Campo elétrico =", E, "N/C")
-
-if Q > 0:
-    print("Sentido: para longe da carga.")
-else:
-    print("Sentido: em direção à carga.")
+print("Força eletrostática:")
+print(F, "N")
